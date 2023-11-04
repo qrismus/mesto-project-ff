@@ -72,9 +72,7 @@ document.addEventListener('click', function (evt) {
 });
 
 // закрытие через оверлей
-popupTypeEdit.addEventListener('click', function (evt) {
-    closeModalOverlay(evt);
-});
+popupTypeEdit.addEventListener('click', closeModalOverlay);
 
 popupTypeNewCard.addEventListener('click', function (evt) {
     closeModalOverlay(evt);
@@ -85,16 +83,16 @@ poputTypeImage.addEventListener('click', function(evt) {
 });
 
 // функция редактирования профиля с сохранением данных и закрытием попапа
-function handleFormSubmit(evt) {
+function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     profileTitle.textContent = nameInput.value;
     profileDesc.textContent = jobInput.value;
     closeModal(popupTypeEdit);
 };
-formElement.addEventListener('submit', handleFormSubmit);
+formElement.addEventListener('submit', handleProfileFormSubmit);
 
 // добавление новой карточки 
-function handleCardImageClick (evt) {
+function handleCardFormSubmit (evt) {
     evt.preventDefault();
     const newCard = {
         name: popupInputCardName.value,
@@ -104,4 +102,4 @@ function handleCardImageClick (evt) {
     closeModal(popupTypeNewCard);
     formNewPlace.reset();
 };
-formNewPlace.addEventListener('submit', handleCardImageClick);
+formNewPlace.addEventListener('submit', handleCardFormSubmit);

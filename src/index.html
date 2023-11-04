@@ -17,10 +17,10 @@
       <div class="profile__image" style="background-image: url(<%=require('./images/avatar.jpg')%>);"></div>
       <div class="profile__info">
         <h1 class="profile__title">Жак-Ив Кусто</h1>
-        <button class="profile__edit-button" type="button"></button>
+        <button class="profile__edit-button" type="button" aria-label="Редактировать профиль"></button>
         <p class="profile__description">Исследователь океана</p>
       </div>
-      <button class="profile__add-button" type="button"></button>
+      <button class="profile__add-button" type="button" aria-label="Добавить новую карточку с фотографией"></button>
     </section>
     <section class="places page__section">
       <ul class="places__list">
@@ -34,7 +34,7 @@
   </footer>
   <div class="popup popup_type_edit">
     <div class="popup__content">
-      <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close" aria-label="Закрыть окно редактирования профиля"></button>
       <h3 class="popup__title">Редактировать профиль</h3>
       <form class="popup__form" name="edit-profile">
         <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Имя" required>
@@ -46,7 +46,7 @@
   </div>
   <div class="popup popup_type_new-card">
     <div class="popup__content">
-      <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close" aria-label="Закрыть окно добавления новой карточки"></button>
       <h3 class="popup__title">Новое место</h3>
       <form class="popup__form" name="new-place">
         <input type="text" name="place-name" class="popup__input popup__input_type_card-name" placeholder="Название" required>
@@ -57,7 +57,7 @@
   </div>
   <div class="popup popup_type_image">
     <div class="popup__content popup__content_content_image">
-      <button type="button" class="popup__close"></button>
+      <button type="button" class="popup__close" aria-label="Закрыть фотографию"></button>
       <img src="" alt="" class="popup__image">
       <p class="popup__caption"></p>
     </div>
@@ -69,12 +69,12 @@
   <!--Про тег темплейт студенты узнают из уроков 4-го спринта-->
   <li class="places__item card">
     <img class="card__image" src="" alt="" />
-    <button type="button" class="card__delete-button"></button>
+    <button type="button" class="card__delete-button" aria-label="Удалить карточку с фотографией"></button>
     <!--Фоновое, инлайном-->
     <div class="card__description">
       <h2 class="card__title">
       </h2>
-      <button type="button" class="card__like-button"></button>
+      <button type="button" class="card__like-button" aria-label="Поставить лайк карточке с фотографией"></button>
     </div>
   </li>
 </template>

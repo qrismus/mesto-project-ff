@@ -1,5 +1,3 @@
-export{createCard, deleteCard, likeCard};
-
 const cardTemplate = document.querySelector('#card-template').content;
 
 // функция создания карточки
@@ -31,3 +29,5 @@ function deleteCard(evt) {
 function likeCard(evt) {
     evt.target.classList.toggle('card__like-button_is-active');
 };
+
+export{createCard, deleteCard, likeCard};
