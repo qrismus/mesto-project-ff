@@ -1,6 +1,5 @@
 # Проектная работа Mesto
 -------------------------
-https://qrismus.github.io/mesto-project-ff/
 Сервис Mesto: интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.
 
 ## Технологии
@@ -8,3 +7,5 @@ https://qrismus.github.io/mesto-project-ff/
 * HTML
 * CSS
 * JS
+-------------------------
+https://qrismus.github.io/mesto-project-ff/
