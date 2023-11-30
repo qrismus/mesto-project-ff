@@ -11,12 +11,7 @@ function getUserInfo() {
     return fetch(config.baseUrl + '/users/me', {
         headers: config.headers
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // получаем карточки с сервера
@@ -24,12 +19,7 @@ function getInitialCards() {
     return fetch(config.baseUrl +'/cards', {
         headers: config.headers
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // отредактированные данные отправляем на сервер
@@ -42,12 +32,7 @@ function updateUserInfo(profileName, profileJob) {
             about: profileJob
         })
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // отправляем новую карточку на сервер
@@ -60,12 +45,7 @@ function updateNewCard(popupInputCardName, popupInputUrl) {
             link: popupInputUrl
         })
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // удаление карточки
@@ -74,12 +54,7 @@ function deleteCard(cardId) {
         method: 'DELETE',
         headers: config.headers
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // лайк
@@ -88,12 +63,7 @@ function likeCard(cardId) {
         method: 'PUT',
         headers: config.headers
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // дизлак
@@ -102,12 +72,7 @@ function dislikeCard(cardId) {
         method: 'DELETE',
         headers: config.headers
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
 };
 
 // обновление аватара
@@ -119,12 +84,14 @@ function updateUserAvatar(url) {
             avatar: url
         })
     })
-    .then((res) => {
-        if (res.ok) {
-            return res.json();
-        }
-        return Promise.reject(`Что-то пошло не так: ${res.status}`);
-    })
+    .then((res) => checkResponse(res));
+};
+
+function checkResponse(res) {
+    if (res.ok) {
+        return res.json();
+    }
+    return Promise.reject(`Что-то пошло не так: ${res.status}`);
 };
 
 export {getUserInfo, getInitialCards, updateUserInfo, updateNewCard, deleteCard, likeCard, dislikeCard, updateUserAvatar};
